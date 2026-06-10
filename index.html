@@ -6,6 +6,13 @@
     <title>MEPT - Maritime English Proficiency Test</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MEPT">
+    <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
 
@@ -154,12 +161,26 @@
     </main>
 
     <footer>
-        <p>⚓ MEPT Preparation Portal - သင်္ဘောသားများအတွက် ရေကြောင်းအင်္ဂလိပ်စာ လေ့ကျင့်ခန်း</p>
-        <p style="margin-top: 10px; font-size: 0.8rem; color: #777;">
-            &copy; 2026 Copyright All Rights Reserved | Created by Zello
-        </p>
-    </footer>
+    <p>⚓ MEPT Preparation Portal - သင်္ဘောသားများအတွက် ရေကြောင်းအင်္ဂလိပ်စာ လေ့ကျင့်ခန်း</p>
+    <p style="margin-top: 10px; font-size: 0.9rem;">
+         📱 09760114778 | 📧 zaykhantp@gmail.com
+    </p>
+    <p style="margin-top: 10px; font-size: 0.8rem; color: #777;">
+        &copy; 2026 Copyright All Rights Reserved | Created by Zello
+    </p>
+</footer>
 
     <script src="script.js"></script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/MEPT/service-worker.js')
+                    .then((reg) => console.log('Service Worker registered', reg))
+                    .catch((err) => console.log('Service Worker registration failed', err));
+            });
+        }
+    </script>
 </body>
 </html>
