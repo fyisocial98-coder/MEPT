@@ -420,7 +420,7 @@ function checkAuth() {
     const user = document.getElementById("username").value;
     const key = document.getElementById("userKey").value;
     
-    if (user === "mts" && key === "mept2026") {
+    if (user === "zkp" && key === "exam2026") {
         document.getElementById("speakingAuth").style.display = "none";
         document.getElementById("speakingContent").style.display = "block";
         loadSpeakingSet(1);
