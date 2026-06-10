@@ -196,6 +196,218 @@
     .exam-auth-card {
         padding: 30px 20px;
     }
+    /* ============ SAMPLE RESULT CARD ============ */
+.sample-result-section {
+    margin-top: 25px;
+}
+
+.sample-result-card {
+    background: #f8f9fa;
+    border: 2px dashed #e1e1e1;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.sample-result-card:hover {
+    border-color: #3282b8;
+    background: #f0f7fb;
+}
+
+.sample-result-header {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.sample-score-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0f4c75, #3282b8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    color: white;
+}
+
+.sample-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    text-align: left;
+}
+
+.sample-item {
+    background: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #555;
+}
+
+/* ============ RESULT CARD (Exam Submit ပြီးနောက်) ============ */
+.result-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.result-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eef5fa;
+}
+
+.result-header h3 {
+    color: #0f4c75;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.result-header .result-date {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.result-score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0f4c75, #3282b8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+}
+
+.result-score-circle .big-score {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.result-score-circle .total-score {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.result-grade {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.grade-excellent {
+    background: #d4edda;
+    color: #155724;
+}
+
+.grade-good {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.grade-fair {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.grade-poor {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.result-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.result-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.result-item .section-name {
+    font-weight: 500;
+    color: #555;
+}
+
+.result-item .section-score {
+    font-weight: 700;
+    color: #0f4c75;
+}
+
+.result-item .section-bar {
+    width: 100%;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    margin-top: 8px;
+}
+
+.result-item .section-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #3282b8, #0f4c75);
+}
+
+/* Download Button */
+.download-btn {
+    width: 100%;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+.download-btn:hover {
+    background: #c0392b;
+}
+
+/* Print-specific styles */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #examResult, #examResult * {
+        visibility: visible;
+    }
+    #examResult {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    .download-btn {
+        display: none;
+    }
+}
     
     .exam-info-box {
         gap: 10px;
