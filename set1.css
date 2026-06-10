@@ -1,0 +1,203 @@
+/* Exam Auth Screen */
+.exam-auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1b262c, #0f4c75);
+    padding: 20px;
+}
+
+.exam-auth-card {
+    background: white;
+    padding: 40px 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    max-width: 450px;
+    width: 100%;
+}
+
+.exam-auth-card h2 {
+    color: #0f4c75;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.exam-logo {
+    margin-bottom: 15px;
+}
+
+/* Input Groups */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.exam-input {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #e1e1e1;
+    font-size: 1rem;
+    transition: border 0.3s;
+    outline: none;
+}
+
+.exam-input:focus {
+    border-color: #3282b8;
+}
+
+/* Start Button */
+.exam-start-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #0f4c75, #3282b8);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 15px 0;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(15, 76, 117, 0.3);
+}
+
+.exam-start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 76, 117, 0.4);
+}
+
+/* Info Box */
+.exam-info-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0;
+    padding: 12px;
+    background: #f4f7f6;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.exam-info-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+.help-section {
+    margin-top: 25px;
+}
+
+.help-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #888;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.help-divider::before,
+.help-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e1e1e1;
+}
+
+.contact-single-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px 20px;
+    border: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.contact-icon {
+    font-size: 2rem;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-name {
+    font-weight: 600;
+    color: #0f4c75;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.contact-detail {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.contact-detail a {
+    color: #3282b8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-detail a:hover {
+    text-decoration: underline;
+}
+
+/* Timer */
+.timer-bar {
+    background: #0f4c75;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+}
+
+/* Exam Content */
+#examContent header {
+    margin-top: 20px;
+}
+
+#examContent .card {
+    margin-bottom: 30px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .exam-auth-card {
+        padding: 30px 20px;
+    }
+    
+    .exam-info-box {
+        gap: 10px;
+    }
+}
