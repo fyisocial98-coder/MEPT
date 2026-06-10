@@ -31,7 +31,7 @@ const readingData = {
                    { title:"PYROTECHNICS AND DISTRESS SIGNALS", text:"The bridge holds various pyrotechnics, including rocket parachute flares, hand flares, and orange smoke signals. These items are used only to signal for help during a real distress situation. They are kept in a water-resistant box on the bridge navigation wings. The third officer checks their expiry dates every month. Expired flares are unstable and must never be fired.", questions:["Rocket parachute flares are used to signal for help.","Flares are stored in a box that resists water.","The second officer is responsible for checking the expiry dates.","The ship carries a total of 12 hand flares on board.","Expired flares are completely safe to use for practice."], answers:["T","T","F","D","F"] }] }
 };
 
-// ========================= WRITING DATA (with Answer Key samples) =========================
+// ========================= WRITING DATA =========================
 const writingSets = {
     1: { part1:{ A:{ title:"Hand Tool Safety Incident", task:"Write a message to your friend about using tools safely on deck. Include: What broken tool you saw, who you reported it to, why fixing tools quickly is important, what safety rule you remembered.", sample:"Hi, I saw a broken deck hammer today. I reported it to the Bosun. Fixing tools quickly prevents accidents. I learned to check gear first." }, B:{ title:"Cold Weather Challenge", task:"Write a message to your friend about working in cold weather during your watch. Include: How you felt in the freezing wind, what heavy clothes or drinks helped you, why cold weather is normal on North routes, what gear you hope to wear next time.", sample:"Hi, I felt freezing wind during my watch. Hot coffee and a heavy jacket helped me. Cold is normal up North. I need thermal gloves next time." } }, part2:{ A:{ title:"Keeping the Deck Clean", task:"Write about how you will maintain housekeeping and cleanliness on deck. You should say: How you feel about cleaning oily surfaces, what cleaning tasks you want to focus on first, how keeping the deck clear helps you avoid slipping, why a clean workspace supports overall ship safety.", sample:"I feel that cleaning oily surfaces is a very necessary duty on board. What tasks I want to focus on first is wiping the oil spills near the winch. Planning my cleaning schedule carefully helps me avoid dangerous mistakes. Keeping the deck clear helps you avoid slipping on wet metal plates. Good housekeeping supports overall ship safety because a clean workspace reduces fire hazards and allows the team to move quickly during drills. Therefore, teamwork is essential to maintain high safety standards." }, B:{ title:"Learning Ship Routines", task:"Write about how you will adapt to the daily work schedule on board. You should say: How you feel about waking up early for watches, what daily routines you hope to master first, how you will show dedication and follow your supervisor's orders, why learning the ship routine quickly is helpful for new crew.", sample:"I feel positive about waking up early for my scheduled watches because it builds discipline. The daily routines I hope to master first are logbook entries and checking safety equipment. I will show dedication and follow my supervisor's orders by arriving ten minutes before my shift begins. Learning the ship routine quickly is helpful for new crew because it reduces operational errors. When a beginner understands their duties, it supports the entire department and makes the voyage much safer for everyone." } } },
     2: { part1:{ A:{ title:"Missing Safety Sign", task:"Write a message to your friend about a wet floor without a warning sign. Include: What slippery area you found, who you informed to get a sign, why warning signs are important on a moving ship, what you learned about keeping walkways safe.", sample:"Hi, I found a slippery wet floor near the galley. I told the Steward to get a warning sign. Signs prevent slips. Walkways must stay safe." }, B:{ title:"Engine Room Noise Challenge", task:"Write a message to your friend about dealing with loud machinery noise. Include: How you felt when you first entered the noisy engine room, what ear protection helped you, why high noise levels are normal near generators, how you hope to protect your hearing next time.", sample:"Hi, I felt shocked by the loud generator noise. Ear defenders helped protect my ears. Loud noise is normal here. I will wear earplugs next time." } }, part2:{ A:{ title:"Garbage Management at Sea", task:"Write about how you will sort and manage waste on the vessel. You should say: How you feel about separating plastics from food waste, what types of garbage bins you want to check first, how following MARPOL rules helps you avoid ocean pollution, why proper waste management supports a clean marine environment.", sample:"I feel that separating plastics from organic food waste is an important responsibility for every seafarer. The types of garbage bins I want to check first are the recycling containers on the poop deck. Following MARPOL regulations strictly helps us avoid ocean pollution and heavy international fines. Proper waste management supports a clean marine environment and keeps our oceans safe for sea life. By managing our ship's garbage correctly, we show professionalism and respect for global maritime laws." }, B:{ title:"Communicating with Port Authorities", task:"Write about how you will use English to talk with port control. You should say: How you feel about speaking English on the VHF radio, what standard phrases you hope to practice first, how you will show professionalism and speak clearly, why clear radio communication is helpful for a smooth arrival.", sample:"I feel a bit nervous about speaking English on the VHF radio, but I know it is vital. The standard phrases I hope to practice first are the IMO Standard Marine Communication Phrases (SMCP). I will show professionalism and speak clearly by repeating numbers and using correct phonetics. Clear radio communication is helpful for a smooth arrival because it prevents misunderstandings with port control. Good communication avoids ship collisions and ensures that our docking operations are safe." } } },
@@ -49,8 +49,232 @@ const listeningData = {
     5: { task2: { title:"Short Conversations", questions:["What worries the speaker?","Why did the cook change the menu?","Why is the meeting delayed?","Why is Kim tired?","Why is Liam happy?","What are they planning?"], options:[["A. Navigation system","B. Rising temperature","C. Food supply"],["A. Supplies were limited","B. To save money","C. Not enough time"],["A. Someone is absent","B. Work is not finished","C. Captain changed plans"],["A. Worked overnight","B. Feels unwell","C. Exercised too much"],["A. Completed training","B. Received praise","C. Shorter shift"],["A. Training session","B. Repair","C. Celebration"]], answers:["B","C","A","B","A","A"] }, task3: { title:"Long Conversation", questions:["How does the officer feel?","What does the cadet's action show?","What is the attitude toward small problems?","Describe the cadet's personality.","What do we understand about the officer?","What does the officer suggest?"], options:[["A. Cadet is improving","B. Ready for more responsibility","C. Pleased with problem-solving"],["A. Solves problems quickly","B. Follows safety procedures carefully","C. Tries to impress officer"],["A. Useful for teamwork","B. Should be taken seriously","C. Good practice for learning new skills"],["A. Attentive and responsible","B. Friendly and helpful","C. Confident and active"],["A. Focuses on strict rules","B. Values teamwork","C. Encourages learning through guidance"],["A. Check safety equipment","B. Pay close attention and continue learning","C. Report small problems later"]], answers:["A","B","C","B","C","B"] } }
 };
 
+// ========================= SPEAKING DATA (UPDATED Set 1-5) =========================
+const speakingData = {
+    1: {
+        title: "SET 1 – Full Examiner Script",
+        parts: {
+            part1: {
+                title: "Part I – Introduction and Career Life (Approx. 3 mins)",
+                instructions: "Examiner asks 3-5 direct verbal questions to each candidate.",
+                questions: [
+                    { question: "What is your favorite color and why?", sampleAnswer: "My favorite color is blue because it looks like the ocean and makes me feel calm." },
+                    { question: "What's your dream job?", sampleAnswer: "My dream job is to become a Captain of a container ship one day." },
+                    { question: "Why do you want to be a seafarer?", sampleAnswer: "I want to be a seafarer to travel the world, get international experience, and earn a good salary." },
+                    { question: "Do you enjoy traveling to new places?", sampleAnswer: "Yes, I love traveling because I can see different countries and learn about new cultures." },
+                    { question: "What languages can you speak?", sampleAnswer: "I can speak Burmese and English fluently." },
+                    { question: "How do you spend your free time?", sampleAnswer: "In my free time, I like reading books, listening to music, and exercising." },
+                    { question: "What is your duty on board?", sampleAnswer: "As a cadet, my duty is to assist senior officers on the bridge and help with deck maintenance." }
+                ]
+            },
+            part2: {
+                title: "Part II – Understanding the Situation (Task 1: PPE)",
+                instructions: "Prep: 1 min | Speaking: 2 mins per candidate",
+                questions: [
+                    { question: "Why must you wear safety boots?", sampleAnswer: "To protect my feet from heavy falling objects and to prevent slipping." },
+                    { question: "When should you use a helmet?", sampleAnswer: "I should use a helmet whenever I am working on deck, in the engine room, or during maintenance tasks." },
+                    { question: "What happens if you do not wear gloves?", sampleAnswer: "If I don't wear gloves, I can hurt my hands from sharp materials, heat, or dangerous chemicals." },
+                    { question: "Who can give you PPE?", sampleAnswer: "The ship's Safety Officer or Chief Mate will provide the necessary PPE." },
+                    { question: "Why is PPE important at work?", sampleAnswer: "PPE is important because it prevents accidents and protects the crew from workplace injuries." }
+                ]
+            },
+            part3: {
+                title: "Part III – Debate Conversation (Topic: Stress Management)",
+                instructions: "Prep: 1 min | Debate: 3-5 mins",
+                warmups: [
+                    { question: "What causes stress on a ship?", sampleAnswer: "Long working hours, staying away from family, and rough weather can cause stress on a ship." },
+                    { question: "How can teamwork reduce stress?", sampleAnswer: "Teamwork helps share the workload, which makes tasks easier and reduces mental pressure." },
+                    { question: "What do you do when you feel stressed?", sampleAnswer: "When I feel stressed, I like to exercise, listen to music, or talk to my crewmates." }
+                ],
+                debates: [
+                    { statement: "Team support reduces stress.", sampleAnswer: "I agree, because knowing your team has your back helps you feel safer and more relaxed." },
+                    { statement: "Stress makes people work better.", sampleAnswer: "I disagree, because too much stress causes panic, mistakes, and accidents." },
+                    { statement: "Talking about stress is important.", sampleAnswer: "I agree, because sharing your feelings helps solve problems and prevents mental exhaustion." },
+                    { statement: "A calm team works more effectively.", sampleAnswer: "I agree, because a calm team can think clearly and execute safety procedures perfectly." }
+                ]
+            }
+        }
+    },
+    2: {
+        title: "SET 2 – Full Examiner Script",
+        parts: {
+            part1: {
+                title: "Part I – Introduction and Career Life",
+                instructions: "Examiner asks 3-5 direct verbal questions to each candidate.",
+                questions: [
+                    { question: "Where do you live and what do you like about it?", sampleAnswer: "I live in Yangon. I like it because it is a lively city with friendly people and beautiful places." },
+                    { question: "Why did you choose the maritime sector for your career?", sampleAnswer: "I chose this sector because it offers great career growth, professional discipline, and a chance to explore the world." },
+                    { question: "Who inspires you the most in your life?", sampleAnswer: "My parents inspire me the most because they always teach me to work hard and stay honest." },
+                    { question: "Do you prefer working in the day or at night?", sampleAnswer: "I prefer working in the day because there is better visibility and it feels more natural." },
+                    { question: "What computer skills do you have?", sampleAnswer: "I know how to use Microsoft Office, check emails, and manage digital files properly." },
+                    { question: "How do you keep yourself healthy and fit?", sampleAnswer: "I keep fit by doing regular exercises like running and push-ups, and by eating healthy food." },
+                    { question: "What is the most exciting part of living on a ship?", sampleAnswer: "The most exciting part is waking up in a new country and seeing the beautiful sunrises at sea." }
+                ]
+            },
+            part2: {
+                title: "Part II – Understanding the Situation (Task 2: Daily Ship Routine)",
+                instructions: "Prep: 1 min | Speaking: 2 mins per candidate",
+                questions: [
+                    { question: "What time do you start working on the ship?", sampleAnswer: "Usually, normal deck work starts at 08:00 hours, but watchkeeping times depend on the duty schedule." },
+                    { question: "Who tells you about your daily tasks?", sampleAnswer: "The Chief Officer or the Bosun tells us about our daily tasks during the morning briefing." },
+                    { question: "Why must you arrive on time?", sampleAnswer: "I must arrive on time to show discipline and to relieve the previous watchkeeping crew without delay." },
+                    { question: "What should you bring to work each day?", sampleAnswer: "I should bring my proper PPE, a notebook, a pen, and the right tools for my assigned task." },
+                    { question: "Why is it important to follow the schedule?", sampleAnswer: "It is important so that all ship operations can run smoothly, safely, and finish on time." }
+                ]
+            },
+            part3: {
+                title: "Part III – Debate Conversation (Topic: Safety Drills)",
+                instructions: "Prep: 1 min | Debate: 3-5 mins",
+                warmups: [
+                    { question: "What are safety drills?", sampleAnswer: "Safety drills are regular practice sessions that teach the crew how to handle emergencies like fire or flooding." },
+                    { question: "Why are drills important?", sampleAnswer: "They are important because they train us to respond quickly and correctly during a real emergency." },
+                    { question: "How often should drills happen?", sampleAnswer: "Drills should happen regularly, usually once every month, according to maritime regulations." }
+                ],
+                debates: [
+                    { statement: "Drills prepare teams for emergencies.", sampleAnswer: "I agree completely, because regular practice builds muscle memory for critical situations." },
+                    { statement: "Drills are boring but necessary.", sampleAnswer: "I agree, because even if they feel repetitive, they keep our safety skills sharp." },
+                    { statement: "Frequent drills improve safety.", sampleAnswer: "I agree, because the more we practice, the fewer mistakes we will make during a crisis." },
+                    { statement: "Teams should take drills seriously.", sampleAnswer: "I agree, because a small mistake during a drill could mean a disaster in a real emergency." }
+                ]
+            }
+        }
+    },
+    3: {
+        title: "SET 3 – Full Examiner Script",
+        parts: {
+            part1: {
+                title: "Part I – Introduction and Career Life",
+                instructions: "Examiner asks 3-5 direct verbal questions to each candidate.",
+                questions: [
+                    { question: "What was your favorite subject in school and why?", sampleAnswer: "My favorite subject was Mathematics because I enjoy solving logical problems." },
+                    { question: "How do you feel about leaving your family for long contracts?", sampleAnswer: "It is difficult to stay away from family, but I stay strong to support them and build my career." },
+                    { question: "What are the essential qualities of a good seafarer?", sampleAnswer: "A good seafarer must be disciplined, hardworking, highly responsible, and a good team player." },
+                    { question: "Do you like cooking or trying new foods?", sampleAnswer: "I don't cook much, but I really enjoy trying traditional foods from different countries." },
+                    { question: "How do you handle difficult weather conditions?", sampleAnswer: "I handle it by staying calm, following all safety protocols, and ensuring everything on deck is tightly secured." },
+                    { question: "What are your long-term career goals in five years?", sampleAnswer: "In five years, I hope to pass my officer exams and become a qualified Second Officer." },
+                    { question: "How do you stay connected with friends when you are away?", sampleAnswer: "I stay connected by using social media and messaging apps whenever the ship has internet access." }
+                ]
+            },
+            part2: {
+                title: "Part II – Understanding the Situation (Task 3: Handling Emergency Alarms)",
+                instructions: "Prep: 1 min | Speaking: 2 mins per candidate",
+                questions: [
+                    { question: "What should you do immediately when you hear the general alarm?", sampleAnswer: "I must stop whatever I am doing and go to my designated muster station immediately." },
+                    { question: "Where is your designated muster station located?", sampleAnswer: "It is usually located on the boat deck, but I must check the vessel's Muster List to be absolutely sure." },
+                    { question: "What personal emergency gear must you collect from your cabin?", sampleAnswer: "I must collect my lifejacket, immersion suit, warm clothing, and my discharge book." },
+                    { question: "Who is responsible for counting the crew at the station?", sampleAnswer: "The Officer in Charge of that specific muster station is responsible for counting and checking the crew." },
+                    { question: "Why is calm behavior critical during an emergency?", sampleAnswer: "Staying calm helps us think clearly, listen to orders correctly, and avoid dangerous panic on board." }
+                ]
+            },
+            part3: {
+                title: "Part III – Debate Conversation (Topic: Language Barriers)",
+                instructions: "Prep: 1 min | Debate: 3-5 mins",
+                warmups: [
+                    { question: "What language problems can happen on a ship?", sampleAnswer: "Crew members might misunderstand orders or safety signs if they don't speak the same language." },
+                    { question: "How can teams communicate with language differences?", sampleAnswer: "Teams can use standard marine phrases, simple English words, and clear hand gestures to communicate." },
+                    { question: "Why is clear language important?", sampleAnswer: "Clear language is important to avoid confusion and to ensure all operations are done safely." }
+                ],
+                debates: [
+                    { statement: "Language barriers affect teamwork.", sampleAnswer: "I agree, because if communication fails, the crew cannot coordinate their tasks smoothly." },
+                    { statement: "Simple language improves communication.", sampleAnswer: "I agree, because using basic and direct words prevents confusion among international crew." },
+                    { statement: "Everyone should speak one common language.", sampleAnswer: "I agree, and that language should be Maritime English so that everyone is on the same page." },
+                    { statement: "Misunderstandings can cause accidents.", sampleAnswer: "I agree completely, because a misheard command during heavy operations can lead to injuries." }
+                ]
+            }
+        }
+    },
+    4: {
+        title: "SET 4 – Full Examiner Script",
+        parts: {
+            part1: {
+                title: "Part I – Introduction and Career Life",
+                instructions: "Examiner asks 3-5 direct verbal questions to each candidate.",
+                questions: [
+                    { question: "What is your favorite type of weather and why?", sampleAnswer: "I like clear, sunny weather because it makes deck work much safer and easier." },
+                    { question: "What training courses have you completed recently?", sampleAnswer: "I have recently completed my Basic Safety Training (BST) and Security Awareness courses." },
+                    { question: "Why is English communication important for international crews?", sampleAnswer: "English is important because it is the standard maritime language used to avoid misunderstandings on board." },
+                    { question: "Do you prefer indoor tasks or outdoor tasks on deck?", sampleAnswer: "I prefer outdoor tasks because I enjoy being active on deck and breathing fresh air." },
+                    { question: "What hobbies do you plan to practice during off-duty hours?", sampleAnswer: "I plan to study maritime books, watch educational videos, or play table tennis with my crewmates." },
+                    { question: "How do you react when someone gives you constructive feedback?", sampleAnswer: "I accept it positively, thank them, and use it to improve my working habits." },
+                    { question: "What type of vessel do you hope to join first?", sampleAnswer: "I hope to join a bulk carrier or a container ship because they provide excellent basic training for beginners." }
+                ]
+            },
+            part2: {
+                title: "Part II – Understanding the Situation (Task 4: Maintenance & Housekeeping)",
+                instructions: "Prep: 1 min | Speaking: 2 mins per candidate",
+                questions: [
+                    { question: "Why must oily rags be thrown into specific covered bins?", sampleAnswer: "To prevent spontaneous combustion which can cause a serious fire in the workspace." },
+                    { question: "When should the deck department perform rust removal?", sampleAnswer: "They should do it regularly during normal maintenance hours when weather conditions are completely dry." },
+                    { question: "What happens if tools are left scattered on the walkways?", sampleAnswer: "It creates a serious tripping hazard and can cause painful injuries to the crew moving on deck." },
+                    { question: "Who inspects the cleanliness of the engine room daily?", sampleAnswer: "The Second Engineer and Chief Engineer inspect the engine room cleanliness on a daily basis." },
+                    { question: "Why is proper maintenance connected to avoiding accidents?", sampleAnswer: "Proper maintenance ensures that all gear and machinery work correctly, preventing unexpected failures and accidents." }
+                ]
+            },
+            part3: {
+                title: "Part III – Debate Conversation (Topic: Shipboard Discipline)",
+                instructions: "Prep: 1 min | Debate: 3-5 mins",
+                warmups: [
+                    { question: "What are the most common rules on a vessel?", sampleAnswer: "Common rules include wearing full PPE, following watch schedules, and no alcohol consumption on board." },
+                    { question: "Why do we need strict discipline at sea?", sampleAnswer: "We need strict discipline because the sea can be unforgiving, and discipline keeps operations safe." },
+                    { question: "Who ensures everyone follows the regulations?", sampleAnswer: "The Captain and the senior officers ensure that everyone follows shipboard regulations." }
+                ],
+                debates: [
+                    { statement: "Strict discipline keeps the ship safe.", sampleAnswer: "I agree, because it ensures that safety rules are never ignored or bypassed." },
+                    { statement: "Some rules are too difficult to follow.", sampleAnswer: "I disagree, because every rule on board is designed based on past experiences to protect our lives." },
+                    { statement: "Breaking minor rules does not matter.", sampleAnswer: "I disagree, because minor mistakes can build up and lead to a major accident later." },
+                    { statement: "An organized crew works faster.", sampleAnswer: "I agree, because when everyone knows the rules and their specific roles, work flows smoothly." }
+                ]
+            }
+        }
+    },
+    5: {
+        title: "SET 5 – Full Examiner Script",
+        parts: {
+            part1: {
+                title: "Part I – Introduction and Career Life",
+                instructions: "Examiner asks 3-5 direct verbal questions to each candidate.",
+                questions: [
+                    { question: "Who is your best friend on board or in training?", sampleAnswer: "My roommate during training is my best friend because we always help each other study." },
+                    { question: "What are the main challenges of sharing a cabin space?", sampleAnswer: "The main challenges are respecting each other's privacy and keeping the limited space clean and tidy." },
+                    { question: "How do you motivate yourself during a tiring shift?", sampleAnswer: "I remind myself of my duties and think about supporting my family to stay motivated." },
+                    { question: "Do you think maritime life changes a person's character?", sampleAnswer: "Yes, I think it makes a person much more independent, disciplined, and responsible." },
+                    { question: "What is the first thing you want to buy with your salary?", sampleAnswer: "I want to buy a good laptop to help me study for my future officer examinations." },
+                    { question: "How do you handle disagreements with colleagues?", sampleAnswer: "I handle it by staying calm, talking privately, and focusing on solving the problem professionally." },
+                    { question: "What advice would you give to a brand-new cadet?", sampleAnswer: "I would advise them to listen carefully to senior officers, always wear PPE, and never hesitate to ask questions." }
+                ]
+            },
+            part2: {
+                title: "Part II – Understanding the Situation (Task 5: Galley Hygiene)",
+                instructions: "Prep: 1 min | Speaking: 2 mins per candidate",
+                questions: [
+                    { question: "Why must the galley staff wear gloves and hairnets?", sampleAnswer: "To keep the food perfectly clean and prevent any contamination or hair from falling into the meals." },
+                    { question: "When should the fresh water tanks be checked for quality?", sampleAnswer: "They should be checked regularly, especially before taking in new fresh water supplies at a port." },
+                    { question: "What happens if meat is stored in a broken refrigerator?", sampleAnswer: "The meat will spoil and go bad, which can cause severe food poisoning for the whole crew." },
+                    { question: "Who decides the weekly menu adjustments for the crew?", sampleAnswer: "The Chief Cook decides the menu, usually with the approval of the Captain or Chief Mate." },
+                    { question: "Why does healthy food improve the energy of the seafarers?", sampleAnswer: "Healthy food provides the necessary nutrients and energy required to perform hard physical work safely at sea." }
+                ]
+            },
+            part3: {
+                title: "Part III – Debate Conversation (Topic: Working with Seniors)",
+                instructions: "Prep: 1 min | Debate: 3-5 mins",
+                warmups: [
+                    { question: "How do you feel about talking to senior officers?", sampleAnswer: "I feel respectful but confident, as long as I follow proper bridge and ship etiquette." },
+                    { question: "What can a beginner learn from an experienced engineer or captain?", sampleAnswer: "A beginner can learn real-world problem-solving skills and practical safety tips that aren't in books." },
+                    { question: "Why is asking questions important?", sampleAnswer: "Asking questions is important to clear up any doubts and avoid making dangerous operational mistakes." }
+                ],
+                debates: [
+                    { statement: "Seniors are always right.", sampleAnswer: "I disagree; while seniors have great experience, anyone can make a mistake. What matters is following correct safety checklists." },
+                    { statement: "Asking questions shows that you want to learn.", sampleAnswer: "I agree 100%, because it shows that a junior crew member is active, careful, and eager to improve." },
+                    { statement: "Young crew members have better modern technical skills.", sampleAnswer: "I agree to an extent, as younger crew are often more familiar with modern digital devices and software." },
+                    { statement: "Respecting seniors is the most important shipboard rule.", sampleAnswer: "I agree, because a proper hierarchy and mutual respect are essential for maintaining command and safety on board." }
+                ]
+            }
+        }
+    }
+};
+
 // ======================== UI Logic ========================
-let currentGrammarSet=1, currentReadingSet=1, currentWritingSet=1;
+let currentGrammarSet=1, currentReadingSet=1, currentWritingSet=1, currentSpeakingSet=1;
 
 // Grammar Engine
 function loadGrammarSet(setNum){
@@ -116,7 +340,7 @@ function submitReading(){
     document.getElementById('readingResult').innerHTML = `<div class="result">🎯 Score: ${score} / ${total} (${Math.round((score/total)*100)}%)</div>`;
 }
 
-// Writing Engine (dynamic button inside writingContent)
+// Writing Engine
 function loadWritingSet(setNum){
     currentWritingSet = setNum;
     const set = writingSets[setNum];
@@ -189,6 +413,120 @@ function showWritingSamples() {
              <p style="background:#eef5fa; padding:10px; border-radius:6px;">${set.part2.B.sample}</p></div>`;
     document.getElementById('writingSampleResult').innerHTML = html;
     document.getElementById('writingSampleResult').style.display = 'block';
+}
+
+// Speaking Engine
+function checkAuth() {
+    const user = document.getElementById("username").value;
+    const key = document.getElementById("userKey").value;
+    
+    if (user !== "" && key === "MEPT2026") {
+        document.getElementById("speakingAuth").style.display = "none";
+        document.getElementById("speakingContent").style.display = "block";
+        loadSpeakingSet(1);
+    } else {
+        alert("Username (သို့) Key မှားယွင်းနေပါသည်။");
+    }
+}
+
+function loadSpeakingSet(setNum) {
+    currentSpeakingSet = setNum;
+    const set = speakingData[setNum];
+    if (!set) return;
+
+    let html = `
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: var(--primary);">📋 ${set.title}</h3>
+        </div>
+
+        <div class="controls" style="margin-bottom: 20px;">
+            <label>Select Set (လေ့ကျင့်မည့် Set ကိုရွေးပါ): </label>
+            <select id="speakingSetSelect" onchange="loadSpeakingSet(parseInt(this.value))">
+                <option value="1" ${setNum === 1 ? 'selected' : ''}>Set 1</option>
+                <option value="2" ${setNum === 2 ? 'selected' : ''}>Set 2</option>
+                <option value="3" ${setNum === 3 ? 'selected' : ''}>Set 3</option>
+                <option value="4" ${setNum === 4 ? 'selected' : ''}>Set 4</option>
+                <option value="5" ${setNum === 5 ? 'selected' : ''}>Set 5</option>
+            </select>
+        </div>
+
+        <!-- Part I -->
+        <div class="test-part" style="margin-bottom: 25px;">
+            <h4 style="color: var(--primary);">🔹 ${set.parts.part1.title}</h4>
+            <p style="font-style: italic; color: var(--text-muted);">${set.parts.part1.instructions}</p>
+            ${set.parts.part1.questions.map((q, i) => `
+                <div class="card" style="margin-top: 15px;">
+                    <p><strong>Q${i+1}:</strong> "${q.question}"</p>
+                    <button class="primary-btn" style="margin-top: 8px; font-size: 0.85rem;" onclick="toggleSampleAnswer(this, 'sample1_${setNum}_${i}')">📋 Show Sample Answer</button>
+                    <div id="sample1_${setNum}_${i}" style="display: none; margin-top: 10px; background: #eef5fa; padding: 10px; border-radius: 6px;">
+                        <strong>💡 Sample Answer:</strong> ${q.sampleAnswer}
+                    </div>
+                    <textarea placeholder="သင့်အဖြေကို ဒီမှာရေးပါ..." rows="2" style="width: 100%; margin-top: 10px;"></textarea>
+                </div>
+            `).join('')}
+        </div>
+
+        <!-- Part II -->
+        <div class="test-part" style="margin-bottom: 25px;">
+            <h4 style="color: var(--primary);">🔹 ${set.parts.part2.title}</h4>
+            <p style="font-style: italic; color: var(--text-muted);">${set.parts.part2.instructions}</p>
+            ${set.parts.part2.questions.map((q, i) => `
+                <div class="card" style="margin-top: 15px;">
+                    <p><strong>Q${i+1}:</strong> "${q.question}"</p>
+                    <button class="primary-btn" style="margin-top: 8px; font-size: 0.85rem;" onclick="toggleSampleAnswer(this, 'sample2_${setNum}_${i}')">📋 Show Sample Answer</button>
+                    <div id="sample2_${setNum}_${i}" style="display: none; margin-top: 10px; background: #eef5fa; padding: 10px; border-radius: 6px;">
+                        <strong>💡 Sample Answer:</strong> ${q.sampleAnswer}
+                    </div>
+                    <textarea placeholder="သင့်အဖြေကို ဒီမှာရေးပါ..." rows="2" style="width: 100%; margin-top: 10px;"></textarea>
+                </div>
+            `).join('')}
+        </div>
+
+        <!-- Part III -->
+        <div class="test-part" style="margin-bottom: 25px;">
+            <h4 style="color: var(--primary);">🔹 ${set.parts.part3.title}</h4>
+            <p style="font-style: italic; color: var(--text-muted);">${set.parts.part3.instructions}</p>
+            
+            <!-- Warm-up Questions -->
+            <h5 style="margin-top: 15px; color: var(--accent);">🔥 Warm-up Questions</h5>
+            ${set.parts.part3.warmups.map((q, i) => `
+                <div class="card" style="margin-top: 10px;">
+                    <p><strong>Warm-up ${i+1}:</strong> "${q.question}"</p>
+                    <button class="primary-btn" style="margin-top: 8px; font-size: 0.85rem;" onclick="toggleSampleAnswer(this, 'warmup_${setNum}_${i}')">📋 Show Sample Answer</button>
+                    <div id="warmup_${setNum}_${i}" style="display: none; margin-top: 10px; background: #eef5fa; padding: 10px; border-radius: 6px;">
+                        <strong>💡 Sample Answer:</strong> ${q.sampleAnswer}
+                    </div>
+                    <textarea placeholder="သင့်အဖြေကို ဒီမှာရေးပါ..." rows="2" style="width: 100%; margin-top: 10px;"></textarea>
+                </div>
+            `).join('')}
+
+            <!-- Debate Statements -->
+            <h5 style="margin-top: 20px; color: var(--accent);">⚡ Debate Statements (Agree or Disagree)</h5>
+            ${set.parts.part3.debates.map((q, i) => `
+                <div class="card" style="margin-top: 10px;">
+                    <p><strong>Statement ${i+1}:</strong> "${q.statement}"</p>
+                    <button class="primary-btn" style="margin-top: 8px; font-size: 0.85rem;" onclick="toggleSampleAnswer(this, 'debate_${setNum}_${i}')">📋 Show Sample Answer</button>
+                    <div id="debate_${setNum}_${i}" style="display: none; margin-top: 10px; background: #eef5fa; padding: 10px; border-radius: 6px;">
+                        <strong>💡 Sample Answer:</strong> ${q.sampleAnswer}
+                    </div>
+                    <textarea placeholder="သင့်အဖြေကို ဒီမှာရေးပါ..." rows="2" style="width: 100%; margin-top: 10px;"></textarea>
+                </div>
+            `).join('')}
+        </div>
+    `;
+
+    document.getElementById('speakingContent').innerHTML = html;
+}
+
+function toggleSampleAnswer(btn, sampleId) {
+    const sampleDiv = document.getElementById(sampleId);
+    if (sampleDiv.style.display === 'none' || sampleDiv.style.display === '') {
+        sampleDiv.style.display = 'block';
+        btn.textContent = '📋 Hide Sample Answer';
+    } else {
+        sampleDiv.style.display = 'none';
+        btn.textContent = '📋 Show Sample Answer';
+    }
 }
 
 // Listening Engine
@@ -290,16 +628,3 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 window.onload = () => { 
     loadGrammarSet(1); 
 };
-
-// Speaking Authentication
-function checkAuth() {
-    const user = document.getElementById("username").value;
-    const key = document.getElementById("userKey").value;
-    
-    if (user !== "" && key === "MEPT2026") {
-        document.getElementById("speakingAuth").style.display = "none";
-        document.getElementById("speakingContent").style.display = "block";
-    } else {
-        alert("Username (သို့) Key မှားယွင်းနေပါသည်။");
-    }
-}
