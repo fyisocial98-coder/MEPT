@@ -1,8 +1,8 @@
 {
-  "name": "MEPT - Maritime English",
+  "name": "MEPT - Maritime English Proficiency Test",
   "short_name": "MEPT",
-  "description": "Maritime English Proficiency Test လေ့ကျင့်ရန်",
-  "start_url": "/index.html",
+  "description": "ရေကြောင်းအင်္ဂလိပ်စာ လေ့ကျင့်ရန် App",
+  "start_url": "/MEPT/index.html",
   "display": "standalone",
   "background_color": "#f4f7f6",
   "theme_color": "#0f4c75",
@@ -14,7 +14,7 @@
       "type": "image/png"
     },
     {
-      "src": "icon-512x512.png",
+      "src": "sailor.jpg",
       "sizes": "512x512",
       "type": "image/png"
     }
