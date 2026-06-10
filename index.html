@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEPT - Maritime English Proficiency Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>⚓ Maritime English Proficiency Test (MEPT)</h1>
+            <p>နမူနာမေးခွန်းများဖြင့် လေ့ကျင့်ရန် | Maritime English Proficiency Test</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="mept-info">
+            <div class="info-card">
+                <h3>❓ MEPT ဆိုတာဘာလဲ ?</h3>
+                <p>MEPT (Maritime English Proficiency Test) ဆိုသည်မှာ ရေကြောင်းလောကသို့ ဝင်ရောက်မည့် ကုန်းပတ်အရာရှိများ၊ စက်မှုအရာရှိများနှင့် အခြားအဆင့်ဆင့်သော သင်္ဘောသားများ၏ ရေကြောင်းသုံး အင်္ဂလိပ်စာ အရည်အချင်းကို စစ်ဆေးသည့် စာမေးပွဲ ဖြစ်ပါသည်။</p>
+            </div>
+            <div class="info-card">
+                <h3>🎯 ဘာကြောင့် ဖြေဆိုရတာလဲ ?</h3>
+                <p>နိုင်ငံတကာ သင်္ဘောလိုင်းများပေါ်တွင် တာဝန်ထမ်းဆောင်သည့်အခါ ဘေးအန္တရာယ်ကင်းရှင်းရေး၊ ရေကြောင်းဆက်သွယ်ရေး နှင့် STCW စည်းမျဉ်းများအား နားလည်သဘောပေါက်ပြီး လိုက်နာနိုင်စွမ်းရှိကြောင်း သက်သေပြရန်ဖြစ်ပါသည်။</p>
+            </div>
+        </section>
+
+        <div class="fullset-bar">
+            <span class="fullset-title">📚 Full Set Exam - အချိန် ၁ နာရီခွဲ</span>
+            <div class="btn-group">
+                <a href="set1.html" class="btn-fullset">Full Set 1</a>
+                <a href="set2.html" class="btn-fullset">Full Set 2</a>
+                <a href="set3.html" class="btn-fullset">Full Set 3</a>
+                <a href="set4.html" class="btn-fullset">Full Set 4</a>
+                <a href="set5.html" class="btn-fullset">Full Set 5</a>
+            </div>
+        </div>
+        
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="grammar">📖 Grammar</button>
+            <button class="tab-btn" data-tab="reading">📰 Reading</button>
+            <button class="tab-btn" data-tab="writing">✍️ Writing</button>
+            <button class="tab-btn" data-tab="listening">🎧 Listening</button>
+            <button class="tab-btn" data-tab="speaking">🗣️ Speaking</button>
+        </nav>
+
+        <div class="content-wrapper">
+            <!-- Grammar Tab -->
+            <div id="grammar" class="tab-content active">
+                <div class="section-header">
+                    <h2>📖 Grammar & Vocabulary</h2>
+                    <span class="badge">20 Marks</span>
+                </div>
+                <div class="controls">
+                    <label>Select Set (လေ့ကျင့်မည့် Set ကိုရွေးပါ): </label>
+                    <select id="grammarSetSelect">
+                        <option value="1">Set 1</option><option value="2">Set 2</option>
+                        <option value="3">Set 3</option><option value="4">Set 4</option><option value="5">Set 5</option>
+                    </select>
+                    <button class="primary-btn" id="loadGrammarBtn">Load Questions (မေးခွန်းများစတင်ရန်)</button>
+                </div>
+                <div id="grammarQuestions" class="question-container"></div>
+                <button id="submitGrammarBtn" class="submit-btn" style="display:none;">✔️ Submit Answers (အဖြေများတင်သွင်းရန်)</button>
+                <div id="grammarResult" class="result-box"></div>
+            </div>
+
+            <!-- Reading Tab -->
+            <div id="reading" class="tab-content">
+                <div class="section-header">
+                    <h2>📰 Reading Comprehension</h2>
+                    <span class="badge">15 Marks</span>
+                </div>
+                <div class="controls">
+                    <label>Select Set (လေ့ကျင့်မည့် Set ကိုရွေးပါ): </label>
+                    <select id="readingSetSelect">
+                        <option value="1">Set 1</option><option value="2">Set 2</option>
+                        <option value="3">Set 3</option><option value="4">Set 4</option><option value="5">Set 5</option>
+                    </select>
+                    <button class="primary-btn" id="loadReadingBtn">Load Questions (မေးခွန်းများစတင်ရန်)</button>
+                </div>
+                <div id="readingQuestions" class="question-container"></div>
+                <button id="submitReadingBtn" class="submit-btn" style="display:none;">✔️ Submit Answers (အဖြေများတင်သွင်းရန်)</button>
+                <div id="readingResult" class="result-box"></div>
+            </div>
+
+            <!-- Writing Tab -->
+            <div id="writing" class="tab-content">
+                <div class="section-header">
+                    <h2>✍️ Writing Tasks</h2>
+                    <span class="badge">30 Marks</span>
+                </div>
+                <div class="controls">
+                    <label>Select Set (လေ့ကျင့်မည့် Set ကိုရွေးပါ): </label>
+                    <select id="writingSetSelect">
+                        <option value="1">Set 1</option><option value="2">Set 2</option>
+                        <option value="3">Set 3</option><option value="4">Set 4</option><option value="5">Set 5</option>
+                    </select>
+                    <button class="primary-btn" id="loadWritingBtn">Load Questions (မေးခွန်းများစတင်ရန်)</button>
+                </div>
+                <div class="notice">✏️ Write your answers below. (မိမိကိုယ်ကို ပြန်လည်စစ်ဆေးရန်အတွက်ဖြစ်ပါသည်)</div>
+                <div id="writingContent" class="question-container"></div>
+                <div id="writingSampleResult" class="result-box" style="display:none;"></div>
+            </div>
+
+            <!-- Listening Tab -->
+            <div id="listening" class="tab-content">
+                <div class="section-header">
+                    <h2>🎧 Listening Comprehension</h2>
+                    <span class="badge">25 Marks</span>
+                </div>
+                <div class="controls">
+                    <label>Select Set (လေ့ကျင့်မည့် Set ကိုရွေးပါ): </label>
+                    <select id="listeningSetSelect">
+                        <option value="1">Set 1</option><option value="2">Set 2</option>
+                        <option value="3">Set 3</option><option value="4">Set 4</option><option value="5">Set 5</option>
+                    </select>
+                    <button class="primary-btn" id="loadListeningBtn">Load Questions (မေးခွန်းများစတင်ရန်)</button>
+                </div>
+                <div id="listeningContent" class="question-container"></div>
+                <button id="submitListeningBtn" class="submit-btn" style="display:none;">✔️ Submit Answers (အဖြေများတင်သွင်းရန်)</button>
+                <div id="listeningResult" class="result-box"></div>
+            </div>
+
+            <!-- Speaking Tab -->
+            <div id="speaking" class="tab-content">
+                <div class="section-header">
+                    <h2>🗣️ Speaking Test (နှုတ်ဖြေစာမေးပွဲ)</h2>
+                    <span class="badge">In-person</span>
+                </div>
+                
+                <div id="speakingAuth" class="card">
+                    <p><strong>ဖြေဆိုရန်အတွက် Username နှင့် Key ထည့်သွင်းပါ -</strong></p>
+                    <input type="text" id="username" placeholder="Username" style="display:block; margin: 10px 0; padding: 8px; width: 90%;">
+                    <input type="password" id="userKey" placeholder="Test Key" style="display:block; margin: 10px 0; padding: 8px; width: 90%;">
+                    <button class="primary-btn" onclick="checkAuth()">Login & Start Test</button>
+                </div>
+
+                <div id="speakingContent" class="card" style="display:none;">
+                    <h3>📋 Speaking Exam Structure & Sample Questions</h3>
+                    <div class="test-part">
+                        <h4>Part I: Introduction and Career Life</h4>
+                        <ul><li>"Could you please introduce yourself? (Rank, Duties, Experience)"</li></ul>
+                    </div>
+                    <div class="test-part">
+                        <h4>Part II: Understanding the Situation</h4>
+                        <ul>
+                            <li>"Explain the procedure of a Fire Drill on board."</li>
+                            <li>"How do you use SMCP during a distress situation?"</li>
+                        </ul>
+                    </div>
+                    <div class="test-part">
+                        <h4>Part III: Debate Conversation – Agree or Disagree</h4>
+                        <ul><li>"Do you agree that social media on board affects safety at work?"</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>⚓ MEPT Preparation Portal - သင်္ဘောသားများအတွက် ရေကြောင်းအင်္ဂလိပ်စာ လေ့ကျင့်ခန်း</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #777;">
+            &copy; 2026 Copyright All Rights Reserved | Created by Zello
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
