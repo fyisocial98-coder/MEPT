@@ -348,33 +348,98 @@ function submitExam() {
     const writingScore = gradeWriting();
     totalScore += writingScore; maxScore += 25;
 
-    // Speaking (15 marks) - Auto-Graded on Submit
+    // Speaking (15 marks)
     const speakingScore = gradeSpeaking();
     totalScore += speakingScore; maxScore += 15;
 
-    // Display Results
+    const percentage = Math.round((totalScore/maxScore)*100);
+    
+    // Get current date
+    const today = new Date();
+    const dateStr = today.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+
+    // Build Result HTML
     const resultDiv = document.getElementById('examResult');
     resultDiv.style.display = 'block';
     resultDiv.innerHTML = `
-        <div class="result">
-            <h3>📊 Exam Results - Set 1</h3>
-            <p>📖 Grammar: <strong>${grammarScore} / 20</strong> (${Math.round((grammarScore/20)*100)}%)</p>
-            <p>📰 Reading: <strong>${readingScore} / 15</strong> (${Math.round((readingScore/15)*100)}%)</p>
-            <p>🎧 Listening: <strong>${listeningScore} / 25</strong> (${Math.round((listeningScore/25)*100)}%)</p>
-            <p>✍️ Writing: <strong>${writingScore} / 25</strong> (${Math.round((writingScore/25)*100)}%)</p>
-            <p>🗣️ Speaking: <strong>${speakingScore} / 15</strong> (${Math.round((speakingScore/15)*100)}%)</p>
-            <hr style="margin: 15px 0;">
-            <h4 style="font-size: 1.3rem;">🎯 Total Score: <strong>${totalScore} / ${maxScore}</strong> (${Math.round((totalScore/maxScore)*100)}%)</h4>
-            <p style="margin-top: 10px; color: #666;">${getGradeMessage(Math.round((totalScore/maxScore)*100))}</p>
+        <div class="result-card" id="resultCard">
+            <div class="result-header">
+                <h3>📊 MEPT Exam Results - Set 1</h3>
+                <p class="result-date">📅 ${dateStr}</p>
+            </div>
+            
+            <div class="result-score-circle">
+                <span class="big-score">${percentage}%</span>
+                <span class="total-score">${totalScore}/${maxScore}</span>
+            </div>
+            
+            <div class="result-grade ${getGradeClass(percentage)}">
+                ${getGradeMessage(percentage)}
+            </div>
+            
+            <div class="result-details">
+                ${buildResultItem('📖 Grammar', grammarScore, 20)}
+                ${buildResultItem('📰 Reading', readingScore, 15)}
+                ${buildResultItem('🎧 Listening', listeningScore, 25)}
+                ${buildResultItem('✍️ Writing', writingScore, 25)}
+                ${buildResultItem('🗣️ Speaking', speakingScore, 15)}
+            </div>
+            
+            <button class="download-btn" onclick="downloadPDF()">
+                📥 Download Result as PDF
+            </button>
         </div>
     `;
 
     resultDiv.scrollIntoView({ behavior: 'smooth' });
 }
 
+function buildResultItem(name, score, max) {
+    const pct = Math.round((score/max)*100);
+    return `
+        <div class="result-item">
+            <span class="section-name">${name}</span>
+            <span class="section-score">${score}/${max} (${pct}%)</span>
+            <div class="section-bar">
+                <div class="section-bar-fill" style="width: ${pct}%"></div>
+            </div>
+        </div>
+    `;
+}
+
+function getGradeClass(p) {
+    if (p >= 80) return 'grade-excellent';
+    if (p >= 60) return 'grade-good';
+    if (p >= 40) return 'grade-fair';
+    return 'grade-poor';
+}
+
 function getGradeMessage(p) {
-    if (p >= 80) return "🏆 Excellent! You are ready for the exam!";
-    if (p >= 60) return "👍 Good job! Keep practicing!";
-    if (p >= 40) return "📚 Need more practice. Study harder!";
-    return "💪 Keep studying! You can improve!";
+    if (p >= 80) return '🏆 Excellent! You are ready for the exam!';
+    if (p >= 60) return '👍 Good job! Keep practicing!';
+    if (p >= 40) return '📚 Need more practice. Study harder!';
+    return '💪 Keep studying! You can improve!';
+}
+
+function downloadPDF() {
+    const resultCard = document.getElementById('resultCard');
+    
+    // Hide download button for PDF
+    const downloadBtn = resultCard.querySelector('.download-btn');
+    downloadBtn.style.display = 'none';
+    
+    // Print/PDF options
+    const opt = {
+        margin: 1,
+        filename: 'MEPT_Set1_Result.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    
+    // Use html2pdf library
+    html2pdf().set(opt).from(resultCard).save().then(() => {
+        // Show download button again
+        downloadBtn.style.display = 'block';
+    });
 }
