@@ -180,5 +180,39 @@
             });
         }
     </script>
+    <script>
+    // ======================== PWA SERVICE WORKER ========================
+    if ('serviceWorker' in navigator) {
+        let refreshing = false;
+        
+        // Check for updates when page loads
+        navigator.serviceWorker.register('/MEPT/service-worker.js').then((registration) => {
+            console.log('Service Worker registered');
+            
+            // Check for updates
+            registration.addEventListener('updatefound', () => {
+                const newWorker = registration.installing;
+                
+                newWorker.addEventListener('statechange', () => {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        // New update available!
+                        if (confirm('🔄 Update Available!\n\nNew version of MEPT is ready. Update now?')) {
+                            newWorker.postMessage('SKIP_WAITING');
+                            window.location.reload();
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Auto reload when new service worker takes over
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!refreshing) {
+                refreshing = true;
+                window.location.reload();
+            }
+        });
+    }
+</script>
 </body>
 </html>
