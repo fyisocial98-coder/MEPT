@@ -1,6 +1,6 @@
 // ======================== SUBSCRIPTION SYSTEM (1 Month) ========================
 const subscriptions = {
-    "student01": { key: "std01@2026", startDate: "2026-01-01", expireDate: "2026-02-01", name: "Student 01" },
+    "mts": { key: "mts@2026", startDate: "2026-06-01", expireDate: "2026-07-01", name: "mts" },
     "student02": { key: "std02@2026", startDate: "2026-01-15", expireDate: "2026-02-15", name: "Student 02" },
     "student03": { key: "std03@2026", startDate: "2026-02-01", expireDate: "2026-03-01", name: "Student 03" },
     "student04": { key: "std04@2026", startDate: "2026-02-10", expireDate: "2026-03-10", name: "Student 04" },
