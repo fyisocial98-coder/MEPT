@@ -186,8 +186,11 @@ function gradeClass(p) { if (p >= 80) return 'grade-excellent'; if (p >= 60) ret
 function gradeMsg(p) { if (p >= 80) return '🏆 Excellent! You are ready for the exam!'; if (p >= 60) return '👍 Good job! Keep practicing!'; if (p >= 40) return '📚 Need more practice.'; return '💪 Keep studying!'; }
 
 function downloadPDF() {
-    const card = document.getElementById('resultCard');
-    const btn = card.querySelector('.download-btn');
-    btn.style.display = 'none';
-    html2pdf().set({ margin: 1, filename: 'MEPT_Set1_Result.pdf', image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2 }, jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' } }).from(card).save().then(() => { btn.style.display = 'block'; });
+    const btn = document.querySelector('.download-btn');
+    if (btn) btn.style.display = 'none';
+    
+    // Print the result
+    window.print();
+    
+    if (btn) btn.style.display = 'block';
 }
