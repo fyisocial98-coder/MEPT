@@ -2,7 +2,7 @@
 function checkExamAuth() {
     const user = document.getElementById("username").value;
     const key = document.getElementById("userKey").value;
-    if (user === "zaykhantpaing" && key === "set5@2026") {
+    if (user === "zkp" && key === "set5@2026") {
         document.getElementById("examAuth").style.display = "none";
         document.getElementById("examContent").style.display = "block";
         loadFullExam();
