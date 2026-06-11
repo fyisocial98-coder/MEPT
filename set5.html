@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEPT - Full Set 5 Exam</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="set5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <div id="examAuth" class="exam-auth-container">
+        <div class="exam-auth-card">
+            <div class="exam-logo">⚓</div>
+            <h2>MEPT Full Set 5</h2>
+            <p style="color: #666; margin-bottom: 5px;">Maritime English Proficiency Test</p>
+            <p style="color: #8e44ad; font-size: 0.9rem; margin-bottom: 5px; font-weight: 600;">🟡 Pre-Intermediate Level (A2/B1)</p>
+            <p style="color: #999; font-size: 0.85rem; margin-bottom: 25px;">စာမေးပွဲစတင်ရန် Exam Key ထည့်သွင်းပါ</p>
+            <div class="input-group"><label class="input-label">👤 Username</label><input type="text" id="username" placeholder="Enter your username" class="exam-input"></div>
+            <div class="input-group"><label class="input-label">🔑 Exam Key</label><input type="password" id="userKey" placeholder="Enter exam key" class="exam-input"></div>
+            <button class="exam-start-btn" onclick="checkExamAuth()">🔑 Start Exam</button>
+            <div class="exam-info-box">
+                <div class="exam-info-item"><span>⏱️</span><span>၁ နာရီခွဲ</span></div>
+                <div class="exam-info-item"><span>📝</span><span>Marks - 100</span></div>
+                <div class="exam-info-item"><span>📋</span><span>Set 5 (A2/B1)</span></div>
+            </div>
+            <div class="help-section">
+                <div class="help-divider"><span>📞 Exam Key မသိပါက ဆက်သွယ်ရန်</span></div>
+                <div class="contact-single-card"><div class="contact-row"><div class="contact-icon">👤</div><div class="contact-info"><p class="contact-name">Zello</p><p class="contact-detail">📱 <strong>Telegram:</strong> <a href="https://t.me/zellokhant" target="_blank">@zellokhant</a></p></div></div></div>
+            </div>
+            <div class="sample-result-section">
+                <div class="help-divider"><span>📊 နမူနာ Exam Result ပုံစံ</span></div>
+                <div class="sample-result-card">
+                    <div class="sample-result-header"><p style="font-weight:700;color:#8e44ad;font-size:0.9rem;">📊 MEPT Exam Results - Set 5</p><p style="font-size:0.7rem;color:#999;">📅 Sample Result</p></div>
+                    <div class="sample-score-circle"><span style="font-size:1.5rem;font-weight:700;">76%</span><span style="font-size:0.65rem;">76/100</span></div>
+                    <div class="sample-grade">👍 Good Job!</div>
+                    <div class="sample-details">
+                        <div class="sample-item"><span>📖 Grammar</span><span>23/30</span></div>
+                        <div class="sample-item"><span>📰 Reading</span><span>12/15</span></div>
+                        <div class="sample-item"><span>🎧 Listening</span><span>18/25</span></div>
+                        <div class="sample-item"><span>✍️ Writing</span><span>15/20</span></div>
+                        <div class="sample-item"><span>🗣️ Speaking</span><span>8/10</span></div>
+                    </div>
+                    <p style="font-size:0.65rem;color:#999;margin-top:10px;">📥 Submit လုပ်ပါက PDF Download ရယူနိုင်ပါသည်</p>
+                </div>
+            </div>
+            <p style="color:#999;font-size:0.8rem;margin-top:15px;">© 2026 MEPT - All Rights Reserved | Created by Zello</p>
+        </div>
+    </div>
+
+    <div id="examContent" class="container" style="display:none;">
+        <header><div class="header-content"><h1>⚓ MEPT - Full Set 5 Exam (A2/B1)</h1><p>Grammar (30) | Reading (15) | Listening (25) | Writing (20) | Speaking (10)</p></div></header>
+        <main>
+            <div class="timer-bar"><span id="timer">⏱️ 90:00</span></div>
+            <div class="card"><div class="section-header"><h2>📖 SECTION I: Grammar & Vocabulary (A2/B1)</h2><span class="badge">30 Marks</span></div><div id="grammarQuestions" class="question-container"></div></div>
+            <div class="card"><div class="section-header"><h2>📰 SECTION II: Reading Comprehension (A2/B1)</h2><span class="badge">15 Marks</span></div><div id="readingQuestions" class="question-container"></div></div>
+            <div class="card"><div class="section-header"><h2>🎧 SECTION III: Listening Skills (A2/B1)</h2><span class="badge">25 Marks</span></div><div id="listeningQuestions" class="question-container"></div></div>
+            <div class="card"><div class="section-header"><h2>✍️ SECTION IV: Writing Skills (A2/B1)</h2><span class="badge">20 Marks</span></div><div id="writingQuestions" class="question-container"></div></div>
+            <div class="card"><div class="section-header"><h2>🗣️ SECTION V: Speaking Skills (A2/B1)</h2><span class="badge">10 Marks</span></div><div id="speakingQuestions" class="question-container"></div></div>
+            <button class="submit-btn" onclick="submitExam()">📝 Submit All Answers</button>
+            <div id="examResult" class="result-box" style="display:none;"></div>
+        </main>
+    </div>
+
+    <script src="set5.js"></script>
+</body>
+</html>
