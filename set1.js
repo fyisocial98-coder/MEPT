@@ -9,7 +9,9 @@ const subscriptions = {
     "student07": { key: "std07@2026", startDate: "2026-04-01", expireDate: "2026-05-01", name: "Student 07" },
     "student08": { key: "std08@2026", startDate: "2026-04-15", expireDate: "2026-05-15", name: "Student 08" },
     "student09": { key: "std09@2026", startDate: "2026-05-01", expireDate: "2026-06-01", name: "Student 09" },
-    "student10": { key: "std10@2026", startDate: "2026-05-15", expireDate: "2026-06-15", name: "Student 10" }
+    "student10": { key: "std10@2026", startDate: "2026-05-15", expireDate: "2026-06-15", name: "Student 10" },
+    // Admin account
+    "zkp": { key: "set1@2026", startDate: "2026-01-01", expireDate: "2030-12-31", name: "Admin" }
 };
 
 // ======================== EXAM AUTH (with Date Check) ========================
@@ -17,25 +19,25 @@ function checkExamAuth() {
     const user = document.getElementById("username").value.trim();
     const key = document.getElementById("userKey").value.trim();
 
-    // Step 1: Check if user exists
+    // Check if user exists
     if (!subscriptions[user]) {
         alert("❌ Username (သို့) Key မှားယွင်းနေပါသည်။");
         return;
     }
 
-    // Step 2: Check password/key
+    // Check password/key
     if (subscriptions[user].key !== key) {
         alert("❌ Username (သို့) Key မှားယွင်းနေပါသည်။");
         return;
     }
 
-    // Step 3: Check date validity
+    // Check date validity
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     
     const startDate = new Date(subscriptions[user].startDate);
     const expireDate = new Date(subscriptions[user].expireDate);
-    expireDate.setHours(23, 59, 59, 999); // End of expire day
+    expireDate.setHours(23, 59, 59, 999);
 
     // Check if subscription hasn't started yet
     if (today < startDate) {
@@ -61,21 +63,6 @@ function checkExamAuth() {
     
     loadFullExam();
     startTimer(90);
-}
-
-
-// ======================== EXAM AUTH ========================
-function checkExamAuth() {
-    const user = document.getElementById("username").value;
-    const key = document.getElementById("userKey").value;
-    if (user === "zkp" && key === "set1@2026") {
-        document.getElementById("examAuth").style.display = "none";
-        document.getElementById("examContent").style.display = "block";
-        loadFullExam();
-        startTimer(90);
-    } else {
-        alert("Username (သို့) Key မှားယွင်းနေပါသည်။");
-    }
 }
 
 // ======================== TIMER ========================
@@ -254,9 +241,6 @@ function gradeMsg(p) { if (p >= 80) return '🏆 Excellent! You are ready for th
 function downloadPDF() {
     const btn = document.querySelector('.download-btn');
     if (btn) btn.style.display = 'none';
-    
-    // Print the result
     window.print();
-    
     if (btn) btn.style.display = 'block';
 }
