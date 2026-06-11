@@ -28,7 +28,10 @@
                 <label for="userKey" class="input-label">🔑 Exam Key</label>
                 <input type="password" id="userKey" placeholder="Enter exam key" class="exam-input">
             </div>
-            
+             <div class="input-group">
+        <label for="activationKey" class="input-label">🔐 Activation Key (One-Time Use)</label>
+        <input type="text" id="activationKey" placeholder="Enter 6-digit activation key" class="exam-input" maxlength="8">
+            </div>
             <button class="exam-start-btn" onclick="checkExamAuth()">🔑 Start Exam</button>
             
             <div class="exam-info-box">
