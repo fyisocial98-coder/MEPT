@@ -451,7 +451,36 @@
 #examContent header { margin-top: 20px; }
 #examContent .card { margin-bottom: 30px; }
 
+
 @media (max-width: 480px) {
     .exam-auth-card { padding: 30px 20px; }
     .exam-info-box { gap: 10px; }
+}
+
+/* Print/PDF Styles */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    
+    #resultCard, #resultCard * {
+        visibility: visible;
+    }
+    
+    #resultCard {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 20px;
+        background: white !important;
+    }
+    
+    .download-btn {
+        display: none !important;
+    }
+    
+    .timer-bar, header, .tabs, footer {
+        display: none !important;
+    }
 }
