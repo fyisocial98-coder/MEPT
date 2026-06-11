@@ -181,6 +181,23 @@
         }
     </script>
     <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/MEPT/service-worker.js').then((reg) => {
+            reg.addEventListener('updatefound', () => {
+                const newWorker = reg.installing;
+                newWorker.addEventListener('statechange', () => {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        // Update Popup
+                        if (confirm('🔄 Update Available! Restart now?')) {
+                            window.location.reload();
+                        }
+                    }
+                });
+            });
+        });
+    }
+</script>
+    <script>
     // ======================== PWA SERVICE WORKER ========================
     if ('serviceWorker' in navigator) {
         let refreshing = false;
