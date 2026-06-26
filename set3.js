@@ -1,19 +1,70 @@
-// ======================== EXAM AUTH ========================
+// ======================== SUBSCRIPTION SYSTEM (1 Month) ========================
+const subscriptions = {
+    "mts": { key: "mts@2026", startDate: "2026-06-01", expireDate: "2026-07-01", name: "mts" },
+    "student02": { key: "std02@2026", startDate: "2026-01-15", expireDate: "2026-02-15", name: "Student 02" },
+    "student03": { key: "std03@2026", startDate: "2026-02-01", expireDate: "2026-03-01", name: "Student 03" },
+    "student04": { key: "std04@2026", startDate: "2026-02-10", expireDate: "2026-03-10", name: "Student 04" },
+    "student05": { key: "std05@2026", startDate: "2026-03-01", expireDate: "2026-04-01", name: "Student 05" },
+    "student06": { key: "std06@2026", startDate: "2026-03-15", expireDate: "2026-04-15", name: "Student 06" },
+    "student07": { key: "std07@2026", startDate: "2026-04-01", expireDate: "2026-05-01", name: "Student 07" },
+    "student08": { key: "std08@2026", startDate: "2026-04-15", expireDate: "2026-05-15", name: "Student 08" },
+    "student09": { key: "std09@2026", startDate: "2026-05-01", expireDate: "2026-06-01", name: "Student 09" },
+    "student10": { key: "std10@2026", startDate: "2026-05-15", expireDate: "2026-06-15", name: "Student 10" },
+    // Admin account
+    "zkp": { key: "set1@2026", startDate: "2026-01-01", expireDate: "2030-12-31", name: "Admin" }
+};
+
+// ======================== EXAM AUTH (with Date Check) ========================
 function checkExamAuth() {
-    const user = document.getElementById("username").value;
-    const key = document.getElementById("userKey").value;
-    if (user === "zkp" && key === "set3@2026") {
-        document.getElementById("examAuth").style.display = "none";
-        document.getElementById("examContent").style.display = "block";
-        loadFullExam();
-        startTimer(90);
-    } else { alert("Username (သို့) Key မှားယွင်းနေပါသည်။"); }
+    const user = document.getElementById("username").value.trim();
+    const key = document.getElementById("userKey").value.trim();
+
+    // Check if user exists
+    if (!subscriptions[user]) {
+        alert("❌ Username (သို့) Key မှားယွင်းနေပါသည်။");
+        return;
+    }
+
+    // Check password/key
+    if (subscriptions[user].key !== key) {
+        alert("❌ Username (သို့) Key မှားယွင်းနေပါသည်။");
+        return;
+    }
+
+    // Check date validity
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    const startDate = new Date(subscriptions[user].startDate);
+    const expireDate = new Date(subscriptions[user].expireDate);
+    expireDate.setHours(23, 59, 59, 999);
+
+    // Check if subscription hasn't started yet
+    if (today < startDate) {
+        const daysLeft = Math.ceil((startDate - today) / (1000 * 60 * 60 * 24));
+        alert(`⚠️ သင့်အကောင့်ကို ${subscriptions[user].startDate} ရက်နေ့မှ စတင်အသုံးပြုနိုင်ပါမည်။\nစောင့်ဆိုင်းရန် - ${daysLeft} ရက်`);
+        return;
+    }
+
+    // Check if subscription has expired
+    if (today > expireDate) {
+        alert(`❌ သင့်အကောင့်သက်တမ်းမှာ ${subscriptions[user].expireDate} ရက်နေ့တွင် ကုန်ဆုံးသွားပါပြီ။\nကျေးဇူးပြု၍ အကောင့်သက်တမ်းတိုးရန် ဆရာထံ ဆက်သွယ်ပါ။`);
+        return;
+    }
+
+    // Calculate remaining days
+    const remainingDays = Math.ceil((expireDate - today) / (1000 * 60 * 60 * 24));
+    
+    // Success
+    alert(`✅ အကောင့်ဝင်ရောက်ပြီးပါပြီ။\n👤 ${subscriptions[user].name}\n📅 ကျန်ရှိရက် - ${remainingDays} ရက်`);
+
+    document.getElementById("examAuth").style.display = "none";
+    document.getElementById("examContent").style.display = "block";
+    
+    loadFullExam();
+    startTimer(90);
 }
 
-let timerInterval, timeLeft;
-function startTimer(minutes) { timeLeft = minutes * 60; updateTimerDisplay(); timerInterval = setInterval(() => { timeLeft--; updateTimerDisplay(); if (timeLeft <= 0) { clearInterval(timerInterval); alert("⏰ အချိန်ပြည့်ပါပြီ။"); submitExam(); } }, 1000); }
-function updateTimerDisplay() { const mins = Math.floor(timeLeft / 60), secs = timeLeft % 60; document.getElementById("timer").textContent = `⏱️ ${mins}:${secs.toString().padStart(2, '0')}`; }
-function loadFullExam() { loadGrammar(); loadReading(); loadListening(); loadWriting(); loadSpeaking(); }
 
 // ======================== GRAMMAR (30 Qs - B2 Level) ========================
 function loadGrammar() {
